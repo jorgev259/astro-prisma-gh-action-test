@@ -1,5 +1,6 @@
 ---
-
+import prismaClient from "../../utils/prisma-client"
+const recordCount = await prismaClient.generic.count()
 ---
 
 <html lang="en">
@@ -12,5 +13,6 @@
 	</head>
 	<body>
 		<h1>Astro</h1>
+		<h2>Record count: {recordCount}</h2>
 	</body>
 </html>
