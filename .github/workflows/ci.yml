@@ -10,10 +10,10 @@ jobs:
 
     services:
       mysql:
-        image: mysql
+        image: mariadb:latest
         env:
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: testdb
+          MARIADB_ROOT_PASSWORD: root
+          MARIADB_DATABASE: testdb
         ports:
           - 3306:3306
 
