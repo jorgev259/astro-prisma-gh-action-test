@@ -3,20 +3,19 @@ name: CI
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     services:
-      mysql:
+      mariadb:
         image: mariadb:latest
         env:
           MARIADB_ROOT_PASSWORD: root
           MARIADB_DATABASE: testdb
         ports:
           - 3306:3306
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
